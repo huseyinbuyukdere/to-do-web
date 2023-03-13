@@ -1,0 +1,37 @@
+@import 'styles/utility';
+
+.title {
+    @include title;
+}
+
+.subTitle {
+    color: $cool-grey-two;
+    margin-top: spacing(1);
+    @include label;
+}
+
+.fullName {
+    margin-top: spacing(8);
+}
+
+.email {
+    margin-top: spacing(6);
+}
+
+.password {
+    margin-top: spacing(6);
+}
+
+.linkContainer {
+    margin-top: spacing(4);
+    .link {
+        text-decoration: underline;
+        color: $dark-blue-grey;
+
+        @include label-small;
+    }
+}
+
+.button {
+    margin-top: spacing(10);
+}

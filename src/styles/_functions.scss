@@ -1,0 +1,12 @@
+@use "sass:list";
+
+@function size($value) {
+    $remValue: ($value / 16) + rem;
+    @return $remValue;
+}
+
+$spaceamounts: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+
+@function spacing($value) {
+    @return size(list.nth($spaceamounts, $value));
+}

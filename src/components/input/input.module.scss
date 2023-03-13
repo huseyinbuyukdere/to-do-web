@@ -1,0 +1,20 @@
+@import 'styles/utility';
+
+.input {
+    border-width: 0 0 size(1) 0;
+    border-color: $white;
+    padding-bottom: spacing(1);
+    transition: border-color ease 1s;
+    width: 100%;
+    @include label;
+
+    &:focus {
+        border-color: $dark-sky-blue;
+    }
+}
+
+::placeholder {
+    color: $cool-grey;
+
+    @include label;
+}

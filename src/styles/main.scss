@@ -1,0 +1,13 @@
+@import 'styles/utility';
+
+$font-family_1: MarkProCustom;
+
+@font-face {
+    font-family: 'MarkProCustom';
+    src: local('MarkProCustom'), url(./fonts/MarkPro.woff) format('woff');
+}
+body {
+    line-height: 1;
+    font-family: $font-family_1;
+    color: $dark-blue-grey;
+}

@@ -1,0 +1,15 @@
+@import 'styles/utility';
+
+.button {
+    align-items: center;
+    background-color: $dark-sky-blue;
+    border: solid size(1) $dark-sky-blue;
+    border-radius: size(4);
+    color: white;
+    display: flex;
+    height: size(36);
+    justify-content: center;
+    width: 100%;
+
+    @include label;
+}

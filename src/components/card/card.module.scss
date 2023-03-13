@@ -1,0 +1,14 @@
+@import 'styles/utility';
+
+.container {
+    background-color: white;
+    border-radius: size(5);
+    box-shadow: 0 size(2) size(16) 0 rgba(0, 0, 0, 0.1);
+    width: size(390);
+    min-height: size(200);
+    padding: size(35) size(30);
+
+    .logo {
+        margin-bottom: spacing(5);
+    }
+}
