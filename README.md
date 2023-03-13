@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# Getting Started
+
+This project is working but it is not completely done ?
+
+Why ? These are not exist
+
+-   Unit tests
+-   Eslint with husky
+-   Filter feature of list
+-   Refresh token mechanism for api calls
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
