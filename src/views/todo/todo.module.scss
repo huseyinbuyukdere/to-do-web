@@ -1,17 +1,7 @@
 @import 'styles/utility';
 
-.title {
-    @include title;
-}
-
-.subTitle {
-    color: $cool-grey-two;
-    margin-top: spacing(1);
-    @include label;
-}
-
-.fullName {
-    margin-top: spacing(8);
+.todo {
+    margin-top: spacing(7);
 }
 
 .email {

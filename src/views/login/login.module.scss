@@ -1,9 +1,5 @@
 @import 'styles/utility';
 
-.title {
-    @include title;
-}
-
 .subTitle {
     color: $cool-grey-two;
     margin-top: spacing(1);

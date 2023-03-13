@@ -1,53 +1,59 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useCallback, useContext, useEffect, useState } from 'react'
 
 import { Layout } from 'components/layout'
 import { Card } from 'components/card'
 import { Input } from 'components/input'
-import { Button } from 'components/button'
+import { List } from 'components/list'
 
 import styles from './todo.module.scss'
+import { AppContext } from 'core/context'
 
 export default () => {
-    const [fullName, setFullName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [todo, setTodo] = useState('')
 
-    const onSignUpButtonClick = () => {}
+    const {
+        todos,
+        CreateNewTodo,
+        GetAllTodo,
+        UpdateTodoStatus,
+        DeleteTodo
+    } = useContext(AppContext)
+
+    const onKeyDownTodo = (e) => {
+        if (e.key === 'Enter') {
+            CreateNewTodo(todo)
+            setTodo('')
+        }
+    }
+
+    const onCheckClick = useCallback((id, isChecked) => {
+        UpdateTodoStatus(id, isChecked)
+    }, [])
+
+    const onDeleteClick = useCallback((id) => {
+        DeleteTodo(id)
+    }, [])
+
+    useEffect(() => {
+        GetAllTodo()
+    }, [])
 
     return (
         <Layout>
-            <Card>
-                <h1 className={styles.title}>Welcome</h1>
-                <h2 className={styles.subTitle}>
-                    Sign up to start using Simpledo today.
-                </h2>
-                <div className={styles.fullName}>
+            <Card title="Todo List">
+                <div className={styles.todo}>
                     <Input
-                        onChange={(e) => setFullName(e.target.value)}
-                        placeholder="Full Name"
+                        value={todo}
+                        onKeyDown={onKeyDownTodo}
+                        onChange={(e) => setTodo(e.target.value)}
+                        placeholder="Add a new todo than Enter"
                     />
                 </div>
-                <div className={styles.email}>
-                    <Input
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
-                    />
-                </div>
-                <div className={styles.password}>
-                    <Input
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Password"
-                    />
-                </div>
-                <div className={styles.linkContainer}>
-                    <Link className={styles.link} to={'/register'}>
-                        Do have an account? Sign in.
-                    </Link>
-                </div>
-                <div className={styles.button}>
-                    <Button onClick={onSignUpButtonClick}>Sign Up</Button>
-                </div>
+                <List
+                    items={todos}
+                    onCheckClick={onCheckClick}
+                    onDeleteClick={onDeleteClick}
+                />
             </Card>
         </Layout>
     )

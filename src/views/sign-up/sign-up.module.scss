@@ -1,16 +1,12 @@
 @import 'styles/utility';
 
-.title {
-    @include title;
-}
-
 .subTitle {
     color: $cool-grey-two;
     margin-top: spacing(1);
     @include label;
 }
 
-.fullName {
+.name {
     margin-top: spacing(8);
 }
 

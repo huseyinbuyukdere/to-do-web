@@ -7,4 +7,14 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
+
+    .logout {
+        background-color: transparent;
+        border-style: none;
+        position: absolute;
+        right: size(20);
+        top: size(10);
+
+        @include label;
+    }
 }
